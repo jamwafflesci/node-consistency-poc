@@ -4,15 +4,16 @@ Testbench for automatically configuring a Node environment on clone/pull/update/
 ## What assumptions are we making about the environment?
 
 - It has `nvm` installed
+- It has Bash somewhere
 
-## On clone it needs to:
+## On Yarn install it needs to:
 
 - Check for the correct Node version (major and minor, no patch)
 	- If not installed: `nvm install <version>` and `nvm alias default <version>`
 - Check that Yarn is installed
 	- If not installed: `npm install -g yarn`
 
-The user needs to run `yarn install` (or just `yarn`) which should have a post-install hook to install the Git hooks into `.git/hooks`
+The user needs to run `yarn install` (or just `yarn`, or `npm install`) which should have a pre-install hook to install the Git hooks into `.git/hooks`
 
 ## On pull it needs to:
 
@@ -34,3 +35,10 @@ The bootstrap script is `./install-git-hooks.sh`. It is run as a `postinstall` s
 
 The `post-merge` script runs on pull
 The `post-checkout` script when the user changes a branch
+
+## Adding a Git hook
+
+- It should be added into `githooks/`
+- It should have the correct name for the Git hook you're targeting. Grep through [the Git hooks docs](https://git-scm.com/book/gr/v2/Customizing-Git-Git-Hooks) for the options.
+- It should have the shebang `#!/bin/bash` to ensure it always runs in Bash
+- It should be executable (`chmod +x githooks/*`)
