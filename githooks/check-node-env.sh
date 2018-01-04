@@ -24,12 +24,12 @@ if [[ "$CURRENT_NODE_VERSION" != "v${DESIRED_NODE_VERSION}" ]]; then
 
 	nvm use "$DESIRED_NODE_VERSION"
 
+	if [ -z $(which yarn) ]; then
+		echo "No Yarn version found"
+
+		npm install -g yarn
+	fi
+
 	echo
 	echo "Run 'nvm use $DESIRED_NODE_VERSION' to start using the correct Node version, or restart your shell"
-fi
-
-if [ -z $(which yarn) ]; then
-	echo "No Yarn version found"
-
-	npm install -g yarn
 fi
