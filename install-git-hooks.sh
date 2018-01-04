@@ -2,4 +2,4 @@
 
 echo "Installing/updating Git hooks"
 
-cp githooks/* .git/hooks/
+cp -f githooks/* .git/hooks/
