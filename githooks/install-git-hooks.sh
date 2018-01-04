@@ -2,8 +2,8 @@
 
 echo "Installing/updating Git hooks"
 
-cp -f githooks/* .git/hooks/
+cp -Rf githooks/ .git/hooks/
 
 chmod +x .git/hooks/*
 
-. ./githooks/check-node-env.sh
+./githooks/check-node-env.sh
