@@ -25,3 +25,12 @@ The user needs to run `yarn install` (or just `yarn`) which should have a post-i
 ## Yarn
 
 Yarn is used because it's faster than NPM, whilst also being compatible. There is a `yarn.lock` file that should be tracked in the repository that will ensure Node package and package dependency version consistency between developer machines, as well as Docker images and production boxes.
+
+## Bootstrapping
+
+The bootstrap script is `./install-git-hooks.sh`. It is run as a `postinstall` script when `yarn install` is ran. Seeing as `yarn install` must be run for the project to be used anyway, it's practically guaranteed that `install-git-hooks.sh` is run before anything else.
+
+## Git hooks
+
+The `post-merge` script runs on pull
+The `post-checkout` script when the user changes a branch
