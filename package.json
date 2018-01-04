@@ -1,0 +1,11 @@
+{
+  "name": "node-consistency-poc",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:jamwaffles/node-consistency-poc.git",
+  "author": "James Waples <james@cambridge-intelligence.com>",
+  "private": true,
+  "scripts": {
+  	"preinstall": "./install-git-hooks.sh"
+  }
+}
