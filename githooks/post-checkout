@@ -1,3 +1,8 @@
 #!/bin/bash
 
 echo "Post checkout script"
+
+# Self update
+./githooks/install-git-hooks.sh
+
+. ./githooks/check-node-env.sh

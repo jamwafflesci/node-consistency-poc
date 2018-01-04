@@ -5,6 +5,7 @@ Testbench for automatically configuring a Node environment on clone/pull/update/
 
 - It has `nvm` installed
 - It has Bash somewhere
+- `yarn` is installed globally with `npm install -g yarn`
 
 ## On Yarn install it needs to:
 
@@ -40,5 +41,4 @@ The `post-checkout` script when the user changes a branch
 
 - It should be added into `githooks/`
 - It should have the correct name for the Git hook you're targeting. Grep through [the Git hooks docs](https://git-scm.com/book/gr/v2/Customizing-Git-Git-Hooks) for the options.
-- It should have the shebang `#!/bin/bash` to ensure it always runs in Bash
 - It should be executable (`chmod +x githooks/*`)
