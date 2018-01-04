@@ -3,7 +3,7 @@
 echo "Post merge script"
 
 # Self update
-./install-git-hooks.sh
+./githooks/install-git-hooks.sh
 
 ./githooks/check-node-env.sh
 
