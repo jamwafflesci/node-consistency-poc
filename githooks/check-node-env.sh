@@ -30,6 +30,8 @@ if [[ "$CURRENT_NODE_VERSION" != "v${DESIRED_NODE_VERSION}" ]]; then
 		npm install -g yarn
 	fi
 
+	yarn install
+
 	echo
 	echo "Run 'nvm use $DESIRED_NODE_VERSION' to start using the correct Node version, or restart your shell"
 fi

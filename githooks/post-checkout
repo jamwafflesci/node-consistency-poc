@@ -6,5 +6,3 @@ echo "Post checkout script"
 ./githooks/install-git-hooks.sh
 
 ./githooks/check-node-env.sh
-
-yarn install
