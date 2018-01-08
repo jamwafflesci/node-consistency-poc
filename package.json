@@ -7,5 +7,8 @@
   "private": true,
   "scripts": {
     "preinstall": "./githooks/install-git-hooks.sh"
+  },
+  "dependencies": {
+    "express": "4"
   }
 }
