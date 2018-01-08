@@ -1,5 +1,13 @@
 # node-consistency-poc
-Testbench for automatically configuring a Node environment on clone/pull/update/whatever
+
+Testbench for automatically configuring a Node environment on clone/pull/update/whatever.
+
+This example has two branches as an example:
+
+- `master`, has a dependency on Express 4 (`yarn list express` shows 4.x)
+- `express-3`, has a dependency on Express 3
+
+Doing `git checkout <branch>` should set the correct Express version automatically.
 
 ## What assumptions are we making about the environment?
 
