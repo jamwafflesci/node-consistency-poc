@@ -34,4 +34,6 @@ if [[ "$CURRENT_NODE_VERSION" != "v${DESIRED_NODE_VERSION}" ]]; then
 
 	echo
 	echo "Run 'nvm use $DESIRED_NODE_VERSION' to start using the correct Node version, or restart your shell"
+else
+	yarn install
 fi
