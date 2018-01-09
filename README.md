@@ -2,39 +2,27 @@
 
 Testbench for automatically configuring a Node environment on clone/pull/update/whatever.
 
+[Spec here](https://docs.google.com/document/d/1LAhKlTEY4pT_OyHIJWOpMV5LXL8GwZeHBv5PlaHlNHs/)
+
+## Demo
+
 This example has two branches as an example:
 
 - `master`, has a dependency on Express 4 (`yarn list express` shows 4.x)
 - `express-3`, has a dependency on Express 3
 
-Doing `git checkout <branch>` should set the correct Express version automatically.
+Doing `git checkout <branch>` should set the correct Express version automatically. You can see this with `yarn list express`.
 
 ## What assumptions are we making about the environment?
 
 - It has `nvm` installed
 - It has Bash somewhere
-- `yarn` is installed globally with `npm install -g yarn`
-
-## On Yarn install it needs to:
-
-- Check for the correct Node version (major and minor, no patch)
-	- If not installed: `nvm install <version>` and `nvm alias default <version>`
-- Check that Yarn is installed
-	- If not installed: `npm install -g yarn`
-
-The user needs to run `yarn install` (or just `yarn`, or `npm install`) which should have a pre-install hook to install the Git hooks into `.git/hooks`
-
-## On pull it needs to:
-
-- Check for the correct Node version (major and minor, no patch)
-	- If not installed: `nvm install <version>` and `nvm alias default <version>`
-- Check that Yarn is installed
-	- If not installed: `npm install -g yarn`
-- Run `yarn install` (or just `yarn`) to install/update node_modules
 
 ## Yarn
 
 Yarn is used because it's faster than NPM, whilst also being compatible. There is a `yarn.lock` file that should be tracked in the repository that will ensure Node package and package dependency version consistency between developer machines, as well as Docker images and production boxes.
+
+The `check-node-env.sh` script will install the latest Yarn globally if it's not already present.
 
 ## Bootstrapping
 
