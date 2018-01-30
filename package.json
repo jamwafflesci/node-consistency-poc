@@ -6,7 +6,8 @@
   "author": "James Waples <james@cambridge-intelligence.com>",
   "private": true,
   "scripts": {
-    "preinstall": "./githooks/install-git-hooks.sh"
+    "preinstall": "./githooks/install-git-hooks.sh",
+    "start": "node index.js"
   },
   "dependencies": {
     "express": "4"
