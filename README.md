@@ -38,3 +38,8 @@ The `post-checkout` script when the user changes a branch
 - It should be added into `githooks/`
 - It should have the correct name for the Git hook you're targeting. Grep through [the Git hooks docs](https://git-scm.com/book/gr/v2/Customizing-Git-Git-Hooks) for the options.
 - It should be executable (`chmod +x githooks/*`)
+
+## Building a server
+
+- Install NVM `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash`
+- TODO: Other firewally-type scripts from the current deploy
